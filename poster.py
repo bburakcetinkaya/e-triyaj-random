@@ -10,28 +10,27 @@ from datetime import datetime
 import numpy as np
 import json
 url = "http://localhost:8000"
-male_names =  pd.read_csv("tr_isim_erkek.csv")["[isim]"]
-female_names = pd.read_csv("tr_isim_kadin.csv")["[isim]"]
-surnames = pd.read_csv("tr_soyisimler.csv")["[soyisim]"]
-tc =  
-
-
-for i in range(500):
-    age = np.random.randint(18,80,1)
-    gender = "MALE"
-    name = np.random.choice(male_names)
-    surname = np.random.choice(surnames)
-    tc =
-
+data =  pd.read_csv("data.csv")
+doctor =  pd.read_csv("doctor.csv")
 class Poster:
     
     def createDoctorData(name,password):
         postData = {
                           "id": 0,
+                          "tc": 0,
                           "name": "string",
+                          "surname": "string",
+                          "role": "string",
                           "password": "string"
                    }
-        
+#         id          INTEGER PRIMARY KEY AUTOINCREMENT,
+# tc		VARCHAR,
+# name	VARCHAR,
+# surname     VARCHAR,
+# role	VARCHAR,
+# password	VARCHAR
+        for i in range(0,20):
+            postData["id"]
     
     def postEntry(name,surname,age,gender,tc,sp02,heartRate,
                         temperature,systolicBP,diastolicBP):
