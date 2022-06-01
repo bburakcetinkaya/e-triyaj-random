@@ -20,6 +20,7 @@ female = []
 doctor_name = []
 doctor_surname = []
 doctors_select = []
+onlyMyDoctor = []
 male_names =  pd.read_csv("tr_isim_erkek.csv")["[isim]"]
 female_names = pd.read_csv("tr_isim_kadin.csv")["[isim]"]
 surnames = pd.read_csv("tr_soyisimler.csv")["[soyisim]"]
@@ -63,6 +64,10 @@ while i < 1000:
         male_name.append(np.random.choice(male_names))
         male_surname.append(np.random.choice(surnames))
         doctors.append(doctors_select[int(index)])
+        if index%2 ==0:
+            onlyMyDoctor.append("TRUE")
+        else:
+            onlyMyDoctor.append("FALSE")
         i+=1
 
     if idn not in male_id and idn not in female_id and i%2==1:
